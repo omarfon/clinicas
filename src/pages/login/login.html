@@ -1,0 +1,15 @@
+<ion-header >
+
+  <ion-navbar color =ifeep>
+    <ion-title>login</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding id="imagenDeFondo" text-center>
+  <div> {{ (af.auth | async)?.uid }} </div>
+  <button (click)="login()">Login</button>
+  <button (click)="logout()">Logout</button>
+ 
+</ion-content>
