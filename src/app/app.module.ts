@@ -6,6 +6,9 @@ import { AngularFireModule } from 'angularfire2';
 
 //paginas de los tabs 
 import { Miscitas } from '../pages/miscitas/miscitas';
+  import { Perfil } from '../pages/perfil/perfil';
+    import { Signup } from '../pages/signup/signup';
+
 import { Reservas } from '../pages/reservas/reservas';
 import { Misdatos } from '../pages/misdatos/misdatos';
 import { Misexamenes } from '../pages/misexamenes/misexamenes';
@@ -36,6 +39,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     Misdatos,
     Misexamenes,
     Login,
+    Perfil,
+    Signup,
     Reservas,
     TabsPage
   ],
@@ -52,6 +57,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     Misdatos,
     Login,
     Reservas,
+    Signup,
+    Perfil,
     HomePage,
     TabsPage
   ],

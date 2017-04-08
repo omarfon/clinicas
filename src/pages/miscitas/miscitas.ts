@@ -3,6 +3,7 @@ import { NavController, NavParams } from 'ionic-angular';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 import { Login } from '../login/login';
 
+
 /**
  * Generated class for the Miscitas page.
  *
@@ -20,16 +21,14 @@ export class Miscitas {
   constructor(public navCtrl: NavController, 
               public navParams: NavParams,
               public af: AngularFire) {
-                window.localStorage.removeItem('user');
-                if(!this.isAlreadyLoggedIn()){
-                  this.navCtrl.push(Login);
-                }
+                if( !this.isAlreadyLoggedIn()){
+        console.log('no estas logeado aun!!, redirigir a la pagina de login');
+        this.navCtrl.push(Login);
+    }
                 this.miscitas = af.database.list('/miscitas');
   }
-    isAlreadyLoggedIn(){
-      let user = window.localStorage.getItem('user');
-      return user !==null && user !== undefined;
-    }
- 
-
+  isAlreadyLoggedIn(){
+    let user = window.localStorage.getItem('user');
+    return user !== null && user !== undefined;
+  }
 }

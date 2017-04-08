@@ -7,9 +7,32 @@
 </ion-header>
 
 
+
 <ion-content padding id="imagenDeFondo" text-center>
-  <div> {{ (af.auth | async)?.uid }} </div>
-  <button (click)="login()">Login</button>
-  <button (click)="logout()">Logout</button>
+  <div padding>
+    <img src="assets/imagenes/logo.png" class="logoLogin">
+  </div>
+  <ion-list class="bajarUnPoco">
+  <form id="login-form">
+    <ion-item id="email" class="inputTransparent">
+      <ion-label floating>E-mail</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+
+    <ion-item id="password" class="inputTransparent">
+      <ion-label floating>Password</ion-label>
+      <ion-input type="text" ></ion-input>
+    </ion-item>
+
+   <div padding>
+    <button block ion-button full color=ifeep id="loginBtn">
+      Logueate
+    </button>
+  </div>
+  <button (click)="goToperfilpage()">O crear una cuenta</button>
+  </form>
+  
+ </ion-list>
  
 </ion-content>
+

@@ -1,6 +1,6 @@
-import { Component, ElementRef, OnInit } from '@angular/core';
+import { Component, ElementRef } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { AngularFire, AuthProviders, AuthMethods } from 'angularfire2';
+import { Signup } from '../signup/signup';
 
 
 /*
@@ -14,14 +14,24 @@ import { AngularFire, AuthProviders, AuthMethods } from 'angularfire2';
   templateUrl: 'login.html'
 })
 export class Login {
-  constructor(public af: AngularFire) {}
 
-  login() {
-    this.af.auth.login();
+  constructor(public navCtrl: NavController, 
+              public navParams: NavParams,
+              public element: ElementRef,
+              
+              ) { }
+  ngOnInit(){
+    var root = this.element.nativeElement;
+    console.log(root);
+    var loginBtn = root.querySelector('#loginBtn');
+    loginBtn.addEventListener('click',this.onClick.bind(this))  
   }
-
-  logout() {
-     this.af.auth.logout();
+  onClick(e){
+      console.log('logging in');
+      this.navCtrl.pop();
+  }
+  goToperfilpage() {
+    this.navCtrl.push(Signup);
   }
 }
   // ontwitterLogin(e){
